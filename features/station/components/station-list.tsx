@@ -2,6 +2,8 @@
 
 import { Input } from '@/components/ui/input'
 import { Station } from '../api/api/station'
+import { CircleX } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 type StationListProps = {
     stations: Station[]
@@ -14,12 +16,23 @@ export function StationList({ stations, search, onSearchChange, onStationSelect 
         <aside className="flex w-[280px] shrink-0 flex-col border-r border-border bg-card">
             <div className="border-b border-border p-3">
                 <h2 className="mb-2 text-sm font-medium">Train Stations around Germany</h2>
-                <Input
-                    placeholder="Search cities..."
-                    className="h-9"
-                    value={search}
-                    onChange={(e) => onSearchChange(e.target.value)}
-                />
+                <div className="relative">
+                    <Input
+                        placeholder="Search cities..."
+                        className="h-9"
+                        value={search}
+                        onChange={(e) => onSearchChange(e.target.value)}
+                    />
+                    <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        className="absolute right-2 top-1/2 -translate-y-1/2"
+                        onClick={() => onSearchChange('')}
+                    >
+                        <CircleX size={16} />
+                    </Button>
+                </div>
             </div>
             <ul className="flex-1 overflow-y-auto p-2">
                 {stations.length > 0 ? (
