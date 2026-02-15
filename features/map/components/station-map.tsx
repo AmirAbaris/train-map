@@ -4,7 +4,7 @@ import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useStation } from '@/features/station/hooks/use-station'
 import { StationList } from '@/features/station/components/station-list'
-import { Station } from '@/features/station/api/api/station'
+import { Station } from '@/features/station/type/station'
 import { StationMapSkeleton } from './station-map-skeleton'
 import { StationMapError } from './station-map-error'
 

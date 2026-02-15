@@ -1,4 +1,4 @@
-import { Station } from './features/station/api/api/station'
+import { Station } from './features/station/type/station'
 
 /**
  * @description Database of stations -- mock data!

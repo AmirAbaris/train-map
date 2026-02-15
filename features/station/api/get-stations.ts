@@ -1,6 +1,6 @@
 import { db } from '@/db'
 import { ApiResponse } from '@/features/common/type/api-response'
-import { Station } from './api/station'
+import { Station } from '../type/station'
 
 /**
  * @description Get all stations

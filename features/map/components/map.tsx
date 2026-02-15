@@ -3,7 +3,7 @@
 import L from 'leaflet'
 import { useEffect } from 'react'
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
-import { Station } from '@/features/station/api/api/station'
+import { Station } from '@/features/station/type/station'
 import { StationPopupContent } from '@/features/station/components/station-popup-content'
 
 const pinIcon = new L.Icon({

@@ -1,7 +1,7 @@
 'use client'
 
 import { Input } from '@/components/ui/input'
-import { Station } from '../api/api/station'
+import { Station } from '../type/station'
 import { CircleX } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
