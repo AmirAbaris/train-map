@@ -23,15 +23,17 @@ export function StationList({ stations, search, onSearchChange, onStationSelect 
                         value={search}
                         onChange={(e) => onSearchChange(e.target.value)}
                     />
-                    <Button
-                        type="button"
-                        variant="ghost"
-                        size="icon"
-                        className="absolute right-2 top-1/2 -translate-y-1/2"
-                        onClick={() => onSearchChange('')}
-                    >
-                        <CircleX size={16} />
-                    </Button>
+                    {search.length > 0 && (
+                        <Button
+                            type="button"
+                            variant="ghost"
+                            size="icon"
+                            className="absolute right-2 top-1/2 -translate-y-1/2"
+                            onClick={() => onSearchChange('')}
+                        >
+                            <CircleX size={16} />
+                        </Button>
+                    )}
                 </div>
             </div>
             <ul className="flex-1 overflow-y-auto p-2">
