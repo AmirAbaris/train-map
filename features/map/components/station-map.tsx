@@ -12,7 +12,8 @@ export function StationMap() {
     const { stations, isLoading, error } = useStation()
 
     if (isLoading) return <StationMapSkeleton />
-    if (error != null) return <StationMapError message={error.message ?? 'Unknown error'} />
+    if (error) return <StationMapError message={error.message ?? 'Unknown error'} />
+    
     return (
         <div className="flex h-dvh w-full">
             <StationList stations={stations ?? []} />
