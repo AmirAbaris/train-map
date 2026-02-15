@@ -1,5 +1,5 @@
 import { db } from '@/db'
-import { ApiResponse, ApiSuccessResponse } from '@/features/common/type/api-response'
+import { ApiResponse } from '@/features/common/type/api-response'
 import { Station } from './api/station'
 
 /**
