@@ -1,3 +1,5 @@
+import { StationMap } from '@/features/map/components/station-map'
+
 export default function Page() {
-  return <h1>hi</h1>;
+    return <StationMap />
 }
