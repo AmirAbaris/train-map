@@ -33,7 +33,7 @@ export function Map({ center, zoom, stations, flyToPosition }: MapProps) {
         <MapContainer center={center ?? [51.505, -0.09]} zoom={zoom ?? 5} className="h-dvh w-full">
             {flyToPosition != null && <FlyTo position={flyToPosition} />}
             <TileLayer
-                url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png"
+                url={`https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png?api_key=${process.env.NEXT_PUBLIC_STADIA_MAPS_API_KEY}`}
                 attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 minZoom={0}
                 maxZoom={20}
