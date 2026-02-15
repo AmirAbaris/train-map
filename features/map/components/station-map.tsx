@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import { useStation } from '@/features/station/hooks/use-station'
-import { CityList } from '@/features/station/components/city-list'
+import { StationList } from '@/features/station/components/station-list'
 
 const Map = dynamic(() => import('@/features/map/components/map').then((m) => m.Map), { ssr: false })
 
@@ -13,8 +13,8 @@ export function StationMap() {
     if (error) return <div>Error: {error?.message}</div>
     return (
         <div className="flex h-dvh w-full">
-            <CityList stations={stations ?? []} />
-            
+            <StationList stations={stations ?? []} />
+
             <div className="min-w-0 flex-1">
                 <Map
                     stations={stations}

@@ -4,10 +4,10 @@ import { Input } from '@/components/ui/input'
 import { Station } from '../api/api/station'
 import { useState } from 'react'
 
-type CityListProps = {
+type StationListProps = {
     stations: Station[]
 }
-export function CityList({ stations }: CityListProps) {
+export function StationList({ stations }: StationListProps) {
     const [search, setSearch] = useState('')
     const filteredStations = stations.filter((station) => station.city.toLowerCase().includes(search.toLowerCase()))
     return (

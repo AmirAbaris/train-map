@@ -1,8 +1,9 @@
 'use client'
 
 import L from 'leaflet'
-import { MapContainer, Marker, TileLayer } from 'react-leaflet'
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Station } from '@/features/station/api/api/station'
+import { StationPopupContent } from '@/features/station/components/station-popup-content'
 
 const pinIcon = new L.Icon({
     iconUrl: '/icons/pin.svg',
@@ -25,7 +26,11 @@ export function Map({ center, zoom, stations }: MapProps) {
                 maxZoom={20}
             />
             {stations?.map((station) => (
-                <Marker key={station.id} position={[station.lat, station.lng]} icon={pinIcon} />
+                <Marker key={station.id} position={[station.lat, station.lng]} icon={pinIcon}>
+                    <Popup>
+                        <StationPopupContent station={station} />
+                    </Popup>
+                </Marker>
             ))}
         </MapContainer>
     )
