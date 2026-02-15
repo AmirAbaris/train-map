@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import { useStation } from '@/features/station/hooks/use-station'
+import { CityList } from '@/features/station/components/city-list'
 
 const Map = dynamic(() => import('@/features/map/components/map').then((m) => m.Map), { ssr: false })
 
@@ -11,9 +12,19 @@ export function StationMap() {
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>Error: {error?.message}</div>
     return (
-        <Map
-            stations={stations}
-            center={stations?.[0]?.lat && stations?.[0]?.lng ? [stations?.[0]?.lat, stations?.[0]?.lng] : undefined}
-        />
+        <div className="flex h-dvh w-full">
+            <CityList stations={stations ?? []} />
+            
+            <div className="min-w-0 flex-1">
+                <Map
+                    stations={stations}
+                    center={
+                        stations?.[0]?.lat != null && stations?.[0]?.lng != null
+                            ? [stations[0].lat, stations[0].lng]
+                            : [51.1657, 10.4515]
+                    }
+                />
+            </div>
+        </div>
     )
 }
