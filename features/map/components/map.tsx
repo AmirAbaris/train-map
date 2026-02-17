@@ -30,7 +30,7 @@ type MapProps = {
 }
 export function Map({ center, zoom, stations, flyToPosition }: MapProps) {
     return (
-        <MapContainer center={center ?? [51.505, -0.09]} zoom={zoom ?? 5} className="h-dvh w-full">
+        <MapContainer center={center ?? [51.505, -0.09]} zoom={zoom ?? 6} className="h-dvh w-full">
             {flyToPosition != null && <FlyTo position={flyToPosition} />}
             <TileLayer
                 url={`https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png?api_key=${process.env.NEXT_PUBLIC_STADIA_MAPS_API_KEY}`}
